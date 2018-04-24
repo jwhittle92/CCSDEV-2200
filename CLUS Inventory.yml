@@ -4,7 +4,18 @@
 10.0.0.2
 10.0.0.3
 
-[Cat9k:vars]
+[CSR1000v]
+
+10.0.0.4
+10.0.0.5
+10.0.0.6
+
+[network:children]
+
+Cat9k
+CSR1000v
+
+[network:vars]
 
 ansible_connection=network_cli
 ansible_network_os=ios
