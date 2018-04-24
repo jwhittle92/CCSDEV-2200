@@ -1,0 +1,15 @@
+[Cat9k]
+
+10.0.0.1
+10.0.0.2
+10.0.0.3
+
+[Cat9k:vars]
+
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_user=cisco
+ansible_password=cisco
+ansible_become=yes
+ansible_become_method=enable
+ansible_become_pass=cisco
