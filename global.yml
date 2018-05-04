@@ -3,4 +3,3 @@
 global:
   dhcp1: 10.5.128.5
   dhcp2: 10.5.128.18
-  key-chain: CISCO_GLBP
