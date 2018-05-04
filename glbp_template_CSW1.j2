@@ -1,0 +1,16 @@
+
+
+
+
+{% for floor in Bld %}
+interface vlan {{ vlan }}
+description {{ description }}
+ip address {{ CSW1 }}
+glbp {{ vlan }} ip {{ gateway }}
+glbp {{ vlan }} priority 90
+glbp {{ vlan }} authentication md5 key-chain {{ key-chain }}
+{% endfor %}
+ip helper-address {{ global.dhcp1 }}
+ip helper-address {{ global.dhcp2 }}
+
+
