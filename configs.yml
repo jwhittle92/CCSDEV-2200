@@ -1,0 +1,9 @@
+#This is the playbook that generates the GLBP configs
+
+---
+- name: Generate GLBP Config
+  hosts: switch
+  gather_facts: no
+  roles:
+    - CiscoLive
+...
