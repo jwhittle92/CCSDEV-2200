@@ -2,7 +2,7 @@
 
 ---
 - name: Generate GLBP Config
-  hosts: switch
+  hosts: Cat9k
   gather_facts: no
   roles:
     - CiscoLive
