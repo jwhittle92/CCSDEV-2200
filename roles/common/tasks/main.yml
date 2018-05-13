@@ -1,7 +1,9 @@
 ---
-- name: Generate GLBP Config
-  hosts: Cat9k
-  gather_facts: no
-  roles:
-    - CiscoLive
-...
+- name: Create GLBP Template
+  template: src=glbp.j2 dest=/etc/ansible/configs/{{ item.description }}.cfg
+  with_items:
+  - "{{ Bld }}"
+
+- name: Compile GLBP configs
+  assemble: src=/etc/ansible/configs/ dest=/etc/ansible/finalconfigs/GLBP_FINAL.cfg
+
