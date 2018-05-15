@@ -1,0 +1,15 @@
+  - name: Add VLANs
+    ios_config:
+      lines:
+      - name {{ vlans.data_name }}
+      parents:
+      - vlan {{ vlan }}
+
+  - name: Configure interface settings
+    ios_config:
+      lines:
+        - description test interface
+        - switchport access vlan {{ vlans.data }}
+        - switchport voice vlan {{ vlans.voice }}
+        - spanning-tree portfast
+      parents: interface range Gi1/0/1-5
