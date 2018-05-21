@@ -62,10 +62,6 @@
         - snmp-server location Lake Oswego
         - snmp-server contact HELPDESK
         - snmp-server enable traps syslog
-        - snmp-server host 10.5.128.63 version 2c 0penG8
-        - snmp-server host 10.5.100.210 version 2c OpenNMS
-        - snmp-server host 10.5.128.78 version 2c Switch_GURU
-        - snmp-server host 10.5.128.88 version 2c Switch_GURU
 
   - name: Configure NTP
     ios_config:
@@ -84,7 +80,6 @@
   - name: Misc
     ios_config:
       lines:
-        - system mtu 1500
         - ip tcp selective-ack
         - no ip http server
         - no ip http secure-server
