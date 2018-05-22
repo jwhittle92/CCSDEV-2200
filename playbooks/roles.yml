@@ -1,5 +1,5 @@
 ---
-- name: IOS Config
+- name: Generate roles config
   hosts: switch
   gather_facts: no
   ansible_connection: network_cli
