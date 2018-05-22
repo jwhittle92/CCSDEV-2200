@@ -1,9 +1,6 @@
----
-
 Bld:
     - { description: Floor_1_Data, vlan: 101, CSW1: 10.1.1.3 255.255.255.0, gateway: 10.1.1.1, key: CISCO_GLBP dhcp1: 10.5.1.1 dhcp2: 10.5.2.2 }
     - { description: Floor_2_Data, vlan: 102, CSW1: 10.1.2.3 255.255.255.0, gateway: 10.1.2.1, key: CISCO_GLBP dhcp1: 10.5.1.1 dhcp2: 10.5.2.2 }
     - { description: Floor_3_Data, vlan: 103, CSW1: 10.1.3.3 255.255.255.0, gateway: 10.1.3.1, key: CISCO_GLBP dhcp1: 10.5.1.1 dhcp2: 10.5.2.2 }
     - { description: Floor_4_Data, vlan: 104, CSW1: 10.1.4.3 255.255.255.0, gateway: 10.1.4.1, key: CISCO_GLBP dhcp1: 10.5.1.1 dhcp2: 10.5.2.2 }
     
-

@@ -1,0 +1,11 @@
+---
+- name: Generate roles config
+  hosts: switch
+  gather_facts: no
+  ansible_connection: network_cli
+  vars_files:
+  - creds.yml
+  - "{{ vars }}"
+  roles:
+     - common
+     - Demo_SW_1

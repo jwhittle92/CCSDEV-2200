@@ -1,0 +1,23 @@
+---
+- name: Save Running Config
+  hosts: switch
+  connection: network_cli
+
+  tasks:
+
+  - name: Get hostname
+    ios_command:
+      commands:
+        - show run | i hostname
+    register: hostname
+
+  - name: Show running-config
+    ios_command:
+      commands:
+        - show run
+    register: config
+
+  - copy:
+      content: "{{ config.stdout[0] }}"
+      dest: "/etc/ansible/backups/{{ hostname.stdout[0] }}.txt"
+...

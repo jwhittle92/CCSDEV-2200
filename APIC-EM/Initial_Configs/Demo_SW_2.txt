@@ -1,0 +1,27 @@
+#APIC-EM Intitial Config - Cat9k_2
+
+
+enable
+configure terminal
+!
+hostname Demo_SW_2
+vlan 10
+name Management
+int gi 1/0/1
+sw mod a
+sw a vl 10
+!
+int vl 10
+ip add 10.10.1.11 255.255.255.0
+no shut
+!
+username cisco priv 15 pass cisco
+ip domain-name cisco.com
+crypto key gen rsa
+1024
+ip ssh ver 2
+!
+line vty 0 4
+trans input all
+login local
+!
