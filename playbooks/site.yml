@@ -8,4 +8,4 @@
   - "{{ vars }}"
   roles:
      - common
-     - Access_28
+     - Demo_SW_1
