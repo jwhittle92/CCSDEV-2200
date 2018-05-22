@@ -32,8 +32,8 @@
   - name: Configure routing
     ios_config:
       lines:
-        - network {{ ip.eigrp }}
-        - channel-group 12 mode active
+        - network {{ eigrp.port-channel }}
+        - network {{ eigrp.loopback }}
       parents: router eigrp 100
      
       
