@@ -3,26 +3,12 @@
       lines:
       - name {{ vlans.data_name }}
       parents:
-      - vlan {{ vlan }}
+      - vlan {{ vlans.data }}
 
   - name: Configure interface settings
     ios_config:
       lines:
         - description Data Port
-        - switchport access vlan {{ vlans.data }}
-        - spanning-tree portfast
-      parents: interface range Gi1/0/1-22
-        - name: Add VLANs
-    ios_config:
-      lines:
-      - name {{ vlans.data_name }}
-      parents:
-      - vlan {{ vlan }}
-
-  - name: Configure interface settings
-    ios_config:
-      lines:
-        - description Voice+Data
         - switchport access vlan {{ vlans.data }}
         - spanning-tree portfast
       parents: interface range Gi1/0/1-22
@@ -46,8 +32,8 @@
   - name: Configure routing
     ios_config:
       lines:
-        - network {{ ip.eigrp }}
-        - channel-group 12 mode active
+        - network {{ eigrp.port-channel }}
+        - network {{ eigrp.loopback }}
       parents: router eigrp 100
      
       

@@ -1,9 +1,9 @@
   - name: Add VLANs
     ios_config:
       lines:
-      - name {{ vlans.data_name }}
+      - name {{ vlans.vlan_name }}
       parents:
-      - vlan {{ vlan }}
+      - vlan {{ vlans.data }}
 
   - name: Configure interface settings
     ios_config:
@@ -32,7 +32,7 @@
   - name: Configure routing
     ios_config:
       lines:
-        - network {{ ip.eigrp }}
-        - channel-group 12 mode active
+        - network {{ eigrp.port-channel }}
+        - network {{ eigrp.loopback }}
       parents: router eigrp 100
      

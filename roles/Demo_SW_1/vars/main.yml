@@ -1,10 +1,11 @@
 ---
 hostname: Demo_SW_1
 
-vlan: 100
-
-vlan_name: Data_VLAN
-
-vlan_ip: 192.168.100.1 255.255.255.0
+vlans: 
+    - { data: 100, vlan_name: Data_VLAN, ip: 192.168.100.1 }
+ip:
+  - { port-channel: 192.168.10.10 255.255.255.0 }
+eigrp:
+     - { port-channel: 192.168.10.0 0.0.0.255, loopback: 1.1.1.1 0.0.0.0 }
 
 ...
