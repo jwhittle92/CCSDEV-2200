@@ -28,7 +28,7 @@
     lines:
       - no ip address
       - shutdown
-    parents: interface vlan 
+    parents: interface vlan 1
   tags: default_vlan
   
 - name: Add SNMP_V3 ACL
