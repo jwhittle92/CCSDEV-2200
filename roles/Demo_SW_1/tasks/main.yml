@@ -1,9 +1,9 @@
   - name: Add VLANs
     ios_config:
       lines:
-      - name {{ vlans.vlan_name }}
+        - name {{ vlans.vlan_name }}
       parents:
-      - vlan {{ vlans.data }}
+        - vlan {{ vlans.data }}
 
   - name: Configure interface settings
     ios_config:
