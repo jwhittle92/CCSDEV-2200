@@ -1,0 +1,10 @@
+  - name: Create GLBP Template
+    template: src=glbp.j2 dest=/etc/ansible/configs/{{ item.description }}.cfg
+    with_items:
+    - "{{ Bld }}"
+    tags: glbp
+
+  - name: Compile GLBP configs
+    assemble: src=/etc/ansible/configs/ dest=/etc/ansible/finalconfigs/GLBP_FIN$
+    tags: glbp
+
