@@ -1,7 +1,15 @@
-[Cat9k]
+[Demo_SW_1]
 
 10.10.1.10
+
+[Demo_SW_2]
+
 10.10.1.11
+
+[Cat9k:children]
+
+Demo_SW_1
+Demo_SW_2
 
 [Cat9k:vars]
 

@@ -28,13 +28,13 @@
     lines:
       - no ip address
       - shutdown
-    parents: interface vlan 
+    parents: interface vlan 1
   tags: default_vlan
   
 - name: Add SNMP_V3 ACL
   ios_config:
     lines:
-    - permit host 192.168.100.50'
+    - permit host 192.168.100.50
     - deny any log
     parents:
     - ip access-list standard SNMPV3_ACCESS

@@ -1,40 +1,44 @@
   - name: Add VLANs
     ios_config:
       lines:
-      - name {{ vlans.data_name }}
+      - name {{ item.vlan_name }}
       parents:
-      - vlan {{ vlans.data }}
+      - vlan {{ item.vlan }}
+    with_items: "{{ demo_sw }}"
 
+    
   - name: Configure interface settings
     ios_config:
       lines:
         - description Data Port
-        - switchport access vlan {{ vlans.data }}
+        - switchport access vlan {{ item.vlan }}
         - spanning-tree portfast
       parents: interface range Gi1/0/1-22
-
+    with_items: "{{ demo_sw }}"
+ 
   - name: Create port-channel
     ios_config:
       lines:
         - no switchport
         - channel-group 12 mode active
       parents: interface range Gi1/0/23-24
-      
+  
   - name: Configure port-channel
     ios_config:
       lines:
-        - ip address {{ ip.port-channel }}
+        - ip address {{ item.lag_ip }}
         - channel-group 12 mode active
         - ip authentication mode eigrp 100 md5
         - ip authentication key-chain eigrp 100 cisco
       parents: interface port-channel 12
-      
+    with_items: "{{ demo_sw }}"
+    
   - name: Configure routing
     ios_config:
       lines:
-        - network {{ eigrp.port-channel }}
-        - network {{ eigrp.loopback }}
+        - network {{ item.lag_eigrp }}
       parents: router eigrp 100
-     
+    with_items: "{{ demo_sw }}"
+
       
   
