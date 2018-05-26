@@ -8,16 +8,16 @@ hostname Demo_SW_1
 vlan 10
 name Management
 int gi 1/0/1
-sw mod a
-sw a vl 10
+sw mod access
+sw access vl 10
 !
-int vl 10
+interface vlan 10
 ip add 10.10.1.10 255.255.255.0
-no shut
+no shutdown
 !
-username cisco priv 15 pass cisco
+username cisco privilege 15 pass cisco
 ip domain-name cisco.com
-crypto key gen rsa
+crypto key generate rsa
 1024
 ip ssh ver 2
 !
