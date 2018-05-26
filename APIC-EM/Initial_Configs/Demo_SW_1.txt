@@ -25,3 +25,8 @@ line vty 0 4
 trans input all
 login local
 !
+
+
+vlan:
+   - {ip: 10.1.1.10 255.255.255.0}
+   
