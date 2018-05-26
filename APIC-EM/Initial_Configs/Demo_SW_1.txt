@@ -1,18 +1,18 @@
 #APIC-EM Intitial Config - Cat9k_1
 
-
+#Update Visio to show customer VLAN
+#Add ASA between internet/switch, remove 
 
 configure terminal
 !
-hostname Demo_SW_1
+hostname {{Demo_SW_1}}
 vlan 10
 name Management
-int gi 1/0/1
-sw mod access
-sw access vl 10
+interface GigabitEthernet 0/0
+{{mgmt.ip}}
 !
 interface vlan 10
-ip add 10.10.1.10 255.255.255.0
+ip address {{vlan.ip}}
 no shutdown
 !
 username cisco privilege 15 pass cisco
