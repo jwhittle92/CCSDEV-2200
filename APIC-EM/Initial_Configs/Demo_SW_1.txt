@@ -1,7 +1,7 @@
 #APIC-EM Intitial Config - Cat9k_1
 
 
-enable
+
 configure terminal
 !
 hostname Demo_SW_1
