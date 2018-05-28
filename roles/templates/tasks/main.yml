@@ -5,6 +5,6 @@
     tags: glbp
 
   - name: Compile GLBP configs
-    assemble: src=/etc/ansible/configs/ dest=/etc/ansible/finalconfigs/GLBP_FIN$
+    assemble: src=/etc/ansible/configs/ dest=/var/ansible/finalconfigs/GLBP_FIN$
     tags: glbp
 
