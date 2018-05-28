@@ -1,1 +1,11 @@
-placeholder
+demo_sw:
+  - { vlan: 200, vlan_name: Data_VLAN, lag_ip: 192.168.10.11 255.255.255.0, lag_eigrp: 192.168.10.0 0.0.0.255, loopback_eigrp 2.2.2.2 0.0.0.0   }
+
+
+ansible_connection=network_cli
+ansible_network_os=ios
+ansible_user=cisco
+ansible_password=cisco
+ansible_become=yes
+ansible_become_method=enable
+ansible_become_pass=cisco
