@@ -11,4 +11,4 @@
       - clock summer-time PDT recurring
       - ntp server 192.168.200.10 prefer
       - ntp server 192.168.200.1
-
+...
