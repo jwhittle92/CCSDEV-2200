@@ -1,6 +1,6 @@
 ---
 - name: Generate roles config
-  hosts: switch
+  hosts: Demo_SW_1
   gather_facts: no
   ansible_connection: network_cli
   roles:
