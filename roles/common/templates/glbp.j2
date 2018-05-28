@@ -1,9 +1,0 @@
-
-interface vlan {{ item.vlan }}
-description {{ item.description }}
-ip address {{ item.CSW1 }}
-glbp {{ item.vlan }} ip {{ item.gateway }}
-glbp {{ item.vlan }} priority 90
-glbp {{ item.vlan }} authentication md5 key-chain {{ item.key }}
-ip helper-address {{ item.dhcp1 }}
-ip helper-address {{ item.dhcp2 }}

@@ -1,6 +1,6 @@
 ---
 - name: Save Running Config
-  hosts: switch
+  hosts: Demo_SW_1
   connection: network_cli
 
   tasks:
@@ -19,5 +19,5 @@
 
   - copy:
       content: "{{ config.stdout[0] }}"
-      dest: "/etc/ansible/backups/{{ hostname.stdout[0] }}.txt"
+      dest: "/var/ansible/backups/{{ hostname.stdout[0] }}.txt"
 ...
