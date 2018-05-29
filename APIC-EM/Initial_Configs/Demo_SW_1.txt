@@ -1,8 +1,5 @@
 #APIC-EM Intitial Config - Cat9k_1
 
-#Update Visio to show customer VLAN
-#Add ASA between internet/switch, remove 
-
 configure terminal
 !
 hostname $hostname
