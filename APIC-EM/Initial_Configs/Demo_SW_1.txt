@@ -5,14 +5,14 @@
 
 configure terminal
 !
-hostname {{Demo_SW_1}}
+hostname $hostname
 vlan 10
 name Management
 interface GigabitEthernet 0/0
-{{mgmt.ip}}
+ip address $mgmt_ip
 !
 interface vlan 10
-ip address {{vlan.ip}}
+ip address $vlan_ip
 no shutdown
 !
 username cisco privilege 15 pass cisco
@@ -26,7 +26,3 @@ trans input all
 login local
 !
 
-
-vlan:
-   - {ip: 10.1.1.10 255.255.255.0}
-   
