@@ -3,10 +3,12 @@
 configure terminal
 !
 hostname $hostname
-vlan 10
-name Management
+!
 interface GigabitEthernet 0/0
 ip address $mgmt_ip
+!
+vlan 10
+name Management
 !
 interface vlan 10
 ip address $vlan_ip
