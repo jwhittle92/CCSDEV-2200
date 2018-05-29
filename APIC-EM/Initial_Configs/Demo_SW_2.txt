@@ -19,6 +19,7 @@ no shut
 username cisco priv 15 pass cisco
 ip domain-name cisco.com
 crypto key generate rsa
+yes
 1024
 ip ssh version 2
 !
