@@ -28,8 +28,6 @@
       lines:
         - ip address {{ item.lag_ip }}
         - channel-group 12 mode active
-        - ip authentication mode eigrp 100 md5
-        - ip authentication key-chain eigrp 100 cisco
       parents: interface port-channel 12
     with_items: "{{ demo_sw }}"
     
