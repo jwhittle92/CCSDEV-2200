@@ -20,6 +20,6 @@
         - description Voice+Data
         - switchport access vlan {{ item.vlan }}
         - spanning-tree portfast
-      parents: interface range Gi1/0/1-2
+      parents: interface range Gi1/0/1-22
     with_items: "{{ demo_sw }}"
 ...
