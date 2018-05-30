@@ -2,7 +2,7 @@
 - name: Generate roles config
   hosts: Demo_SW_1
   gather_facts: no
-  ansible_connection: network_cli
+  connection: network_cli
 
 - name: Configure Syslog
   ios_config:
