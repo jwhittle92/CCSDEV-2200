@@ -3,12 +3,14 @@
   hosts: Demo_SW_1
   gather_facts: no
   connection: network_cli
-
-- name: Configure NTP
-  ios_config:
-    lines:
-      - clock timezone PST -8
-      - clock summer-time PDT recurring
-      - ntp server 192.168.200.10 prefer
-      - ntp server 192.168.200.1
+  
+  tasks:
+  
+  - name: Configure NTP
+    ios_config:
+      lines:
+        - clock timezone PST -8
+        - clock summer-time PDT recurring
+        - ntp server 192.168.200.10 prefer
+        - ntp server 192.168.200.1
 ...
