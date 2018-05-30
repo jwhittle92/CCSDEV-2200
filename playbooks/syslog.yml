@@ -4,10 +4,12 @@
   gather_facts: no
   connection: network_cli
 
-- name: Configure Syslog
-  ios_config:
-    lines:
-      - logging trap debugging
-      - logging 192.168.100.5
-  tags: syslog
+  tasks:
+
+  - name: Configure Syslog
+    ios_config:
+      lines:
+        - logging trap debugging
+        - logging 192.168.100.5
+    tags: syslog
 ...
