@@ -31,6 +31,6 @@
     ios_config:
       lines:
         - network {{ lag_eigrp }}
-        - network {{ lag_svi }}
+        - network {{ svi_eigrp }}
       parents: router eigrp 100
 
