@@ -7,9 +7,7 @@ ip address $mgmt_ip
 !
 username cisco privilege 15 pass cisco
 ip domain-name cisco.com
-crypto key generate rsa
-yes
-1024
+crypto key generate rsa modulus 1024
 ip ssh ver 2
 !
 line vty 0 4
