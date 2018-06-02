@@ -1,7 +1,5 @@
-#APIC-EM Intitial Config - Cat9k_1
+#APIC-EM Config - Cat9k
 
-configure terminal
-!
 hostname $hostname
 !
 interface GigabitEthernet 0/0
