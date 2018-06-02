@@ -3,7 +3,7 @@
 hostname $hostname
 !
 interface GigabitEthernet 0/0
-ip address $mgmt_ip
+ip address $mgmt_ip $netmask
 !
 username cisco privilege 15 pass cisco
 ip domain-name cisco.com
