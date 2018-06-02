@@ -1,5 +1,5 @@
 ---
-- name: Generate roles config
+- name: Generate NTP config
   hosts: Demo_SW_1
   gather_facts: no
   connection: network_cli
