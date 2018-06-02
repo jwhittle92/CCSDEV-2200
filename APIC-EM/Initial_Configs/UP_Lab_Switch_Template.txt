@@ -5,13 +5,6 @@ hostname $hostname
 interface GigabitEthernet 0/0
 ip address $mgmt_ip
 !
-vlan 10
-name Management
-!
-interface vlan 10
-ip address $vlan_ip
-no shutdown
-!
 username cisco privilege 15 pass cisco
 ip domain-name cisco.com
 crypto key generate rsa
