@@ -1,0 +1,232 @@
+
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime localtime show-timezone
+service password-encryption
+service compress-config
+!
+hostname {{ hostname }}
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+clock timezone PST -8 0
+clock summer-time PDT recurring
+vtp domain RP_TS_OSPF
+vtp mode transparent
+!
+ip cef
+!
+!
+no ip domain-lookup
+no ip igmp snooping
+no ipv6 cef
+ipv6 multicast rpf use-bgp
+!
+!
+!
+!
+!
+!
+!
+errdisable recovery cause udld
+errdisable recovery cause channel-misconfig (STP)
+errdisable recovery cause psecure-violation
+errdisable recovery cause dhcp-rate-limit
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree portfast bpduguard default
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+{{ vlan }}
+ name Data_VLAN
+!
+ip tcp selective-ack
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel12
+ ip address {{ lag_ip }}
+!
+interface GigabitEthernet1/0/1
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/2
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/3
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/4
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/5
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/6
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/7
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/8
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/9
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/10
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/11
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/12
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/13
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/14
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/15
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/16
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/17
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/18
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/19
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/20
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/21
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/22
+ description {{ access_description }}
+ switchport access {{ vlan }}
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/23
+ no switchport
+ no ip address
+ duplex auto
+ channel-group 12 mode active
+!
+interface GigabitEthernet1/0/24
+ no switchport
+ no ip address
+ duplex auto
+ channel-group 12 mode active
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan100
+ ip address {{svi_ip}}
+!
+router eigrp 100
+ network {{svi_eigrp}}
+ network {{lag_eigrp}}
+
+!
+no ip http server
+!
+!
+ip access-list standard SNMPV3_ACCESS
+ permit 192.168.100.50
+ deny   any log
+!
+logging trap debugging
+logging host 192.168.100.5
+!
+!
+snmp-server group cisco_group v3 priv access SNMPV3_ACCESS
+snmp-server view SNMPV3_READ iso included
+snmp-server location Lake Oswego
+snmp-server contact HELPDESK
+snmp-server enable traps syslog
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login
+!
+ntp server 192.168.200.1
+ntp server 192.168.200.10 prefer
+end
