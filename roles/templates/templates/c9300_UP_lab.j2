@@ -31,7 +31,6 @@ no ip domain-lookup
 !
 !
 errdisable recovery cause udld
-errdisable recovery cause channel-misconfig (STP)
 errdisable recovery cause psecure-violation
 errdisable recovery cause dhcp-rate-limit
 !
@@ -46,7 +45,7 @@ spanning-tree extend system-id
 vlan internal allocation policy ascending
 !
 {{ vlan }}
- name Data_VLAN
+ name {{ vlan_name }}
 !
 ip tcp selective-ack
 !
@@ -63,112 +62,112 @@ interface Port-channel12
 !
 interface GigabitEthernet1/0/1
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/2
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/3
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/4
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/5
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/6
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/7
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/8
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/9
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/10
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/11
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/12
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/13
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/14
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/15
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/16
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/17
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/18
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/19
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/20
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/21
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/22
  description {{ access_description }}
- switchport access {{ vlan }}
+ switchport access {{ access_vlan }}
  spanning-tree portfast
 !
 interface GigabitEthernet1/0/23
@@ -225,3 +224,4 @@ line vty 0 4
 ntp server 192.168.200.1
 ntp server 192.168.200.10 prefer
 end
+
