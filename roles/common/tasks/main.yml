@@ -121,5 +121,8 @@
       - no ip http server
       - no ip http secure-server
       - no ip domain-lookup
-  tags: misc
-
+  tags: 
+  
+- name: save running to startup when modified
+  ios_config:
+    save_when: modified
