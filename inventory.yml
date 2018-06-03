@@ -1,5 +1,5 @@
 
-c9300_UP_lab1 ansible_host=10.21.1.111
+c9300_UP_lab1 ansible_host=10.10.1.10
 
 c9300_UP_lab2 ansible_host=10.10.1.11
 
