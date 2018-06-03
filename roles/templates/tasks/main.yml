@@ -1,10 +1,5 @@
-  - name: Create GLBP Template
-    template: src=glbp.j2 dest=/var/ansible/configs/{{ item.description }}.cfg
-    with_items:
-    - "{{ Bld }}"
-    tags: glbp
+  - name: Generate switch config
+    template: src=c9300_UP_lab.j2 dest=/var/ansible/configs/{{ hostname }}.cfg
+    tags: UP_lab
 
-  - name: Compile GLBP configs
-    assemble: src=/var/ansible/configs/ dest=/var/ansible/finalconfigs/GLBP_FIN$
-    tags: glbp
 
