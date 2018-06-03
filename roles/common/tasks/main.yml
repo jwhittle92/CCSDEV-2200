@@ -20,7 +20,44 @@
       - shutdown
     parents: interface vlan 1
   tags: default_vlan
+
+
+  - name: Add VLANs
+    ios_config:
+      lines:
+        - name {{ vlan_name }}
+      parents:
+        - vlan {{ vlan }}
+
+  - name: Configure interface settings
+    ios_config:
+      lines:
+        - description Voice+Data
+        - switchport access vlan {{ vlan }}
+        - spanning-tree portfast
+      parents: interface range Gi1/0/1-22
+
+  - name: Create port-channel
+    ios_config:
+      lines:
+        - no switchport
+        - channel-group 12 mode active
+      parents: interface range Gi1/0/23-24
   
+  - name: Configure port-channel
+    ios_config:
+      lines:
+        - ip address {{ lag_ip }}
+        - channel-group 12 mode active
+      parents: interface port-channel 12
+  
+  - name: Configure routing
+    ios_config:
+      lines:
+        - network {{ lag_eigrp }}
+        - network {{ svi_eigrp }}
+      parents: router eigrp 100
+      
 - name: Add SNMP_V3 ACL
   ios_config:
     lines:
@@ -86,3 +123,4 @@
       - no ip http secure-server
       - no ip domain-lookup
   tags: misc
+
