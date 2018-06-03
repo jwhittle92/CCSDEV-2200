@@ -1,0 +1,12 @@
+---
+- name: Generate NTP config
+  hosts: c9300_UP_lab
+  gather_facts: no
+  connection: network_cli
+  
+  tasks:
+  
+  - name: Apply generated configs
+    ios_config:
+      src=/var/ansible/configs/{{ hostname }}.cfg
+...
