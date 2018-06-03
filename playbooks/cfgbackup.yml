@@ -1,6 +1,6 @@
 ---
 - name: Save Running Config
-  hosts: Demo_SW_1
+  hosts: c9300_UP_lab
   connection: network_cli
 
   tasks:
