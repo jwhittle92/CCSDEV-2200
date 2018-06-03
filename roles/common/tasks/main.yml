@@ -29,12 +29,13 @@
     parents:
     - ip access-list standard SNMPV3_ACCESS
   tags: acl
+  
 - name: Add VLANs
-    ios_config:
-      lines:
-        - name {{ vlan_name }}
-      parents:
-        - vlan {{ vlan }}
+  ios_config:
+    lines:
+      - name {{ vlan_name }}
+    parents:
+      - vlan {{ vlan }}
 
 - name: Configure interface settings
   ios_config:
