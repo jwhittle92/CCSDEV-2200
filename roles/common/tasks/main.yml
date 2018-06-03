@@ -64,7 +64,7 @@
     lines:
       - network {{ lag_eigrp }}
       - network {{ svi_eigrp }}
-      parents: router eigrp 100
+    parents: router eigrp 100
       
 - name: Configure Err-disable Recovery
   ios_config:
