@@ -1,8 +1,9 @@
 ---
-hostname: Demo_SW_1
+hostname: c9300_UP_lab1
 vlan: 100
 vlan_name: Data_VLAN
 lag_ip: 192.168.10.10 255.255.255.0
 svi_ip: 192.168.100.1 255.255.255.0
 lag_eigrp: 192.168.10.0 0.0.0.255
-lag_svi: 192.168.100.0 0.0.0.255
+svi_eigrp: 192.168.100.0 0.0.0.255
+access_description: Data Switchport
