@@ -40,7 +40,7 @@
 - name: Configure interface settings
   ios_config:
     lines:
-      - description Voice+Data
+      - description Data_Port
       - switchport access vlan {{ vlan }}
       - spanning-tree portfast
     parents: interface range Gi1/0/1-22
