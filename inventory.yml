@@ -1,12 +1,8 @@
-[Demo_SW_1]
 
-10.10.1.10
+c9300_UP_lab1=10.10.1.10
+c9300_UP_lab2=10.10.1.11
 
-[Demo_SW_2]
+[c9300_UP_lab]
 
-10.10.1.11
-
-[Cat9k:children]
-
-Demo_SW_1
-Demo_SW_2
+c9300_UP_lab1
+c9300_UP_lab2
