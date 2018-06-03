@@ -17,7 +17,7 @@
     ios_config:
       lines:
         - description Voice+Data
-        - switchport access vlan {{ vlan }}
+        - switchport access {{ access_vlan }}
         - spanning-tree portfast
       parents: interface range Gi1/0/1-22
 ...
