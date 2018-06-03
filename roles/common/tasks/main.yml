@@ -9,8 +9,8 @@
   ios_config:
     lines:
       - spanning-tree mode rapid-pvst
+      - spanning-tree portfast default
       - spanning-tree portfast bpduguard default
-      - spanning-tree extend system-i
   tags: spanning-tree
   
 - name: Shutdown VLAN 1
