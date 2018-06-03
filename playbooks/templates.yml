@@ -1,0 +1,8 @@
+---
+- name: Generate common config
+  hosts: c9300_UP_lab
+  gather_facts: no
+  connection: network_cli
+  roles:
+     - templates
+ 
