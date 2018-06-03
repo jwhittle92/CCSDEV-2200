@@ -1,6 +1,6 @@
 ---
 - name: Generate roles config
-  hosts: Demo_SW_1
+  hosts: c9300_UP_lab1
   gather_facts: no
   connection: network_cli
   
