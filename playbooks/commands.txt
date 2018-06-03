@@ -6,5 +6,5 @@ ansible-playbook syslog.yml
 ansible-playbook interfaces.yml
 ansible-playbook common.yml
 ansible-playbook cfgbackup.yml
-ansible-playbook template.yml
+ansible-playbook templates.yml
 ansible-playbook full_config.yml
