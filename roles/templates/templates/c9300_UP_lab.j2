@@ -211,16 +211,6 @@ snmp-server location Lake Oswego
 snmp-server contact HELPDESK
 snmp-server enable traps syslog
 !
-control-plane
-!
-!
-line con 0
- exec-timeout 0 0
- logging synchronous
-line aux 0
-line vty 0 4
- login
-!
 ntp server 192.168.200.1
 ntp server 192.168.200.10 prefer
 end
