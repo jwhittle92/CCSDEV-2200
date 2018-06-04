@@ -8,5 +8,5 @@
   
   - name: Apply generated configs
     ios_config:
-      src=/var/ansible/configs/{{ hostname }}.cfg
+      src=/var/ansible/configs/{{ inventory_hostname }}.cfg
 ...
