@@ -1,5 +1,5 @@
 ---
-- name: Generate roles config
+- name: configure vlans and interfaces
   hosts: c9300_UP_lab
   gather_facts: no
   connection: network_cli

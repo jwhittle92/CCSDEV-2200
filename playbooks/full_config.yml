@@ -1,5 +1,5 @@
 ---
-- name: Generate NTP config
+- name: Apply final config
   hosts: c9300_UP_lab
   gather_facts: no
   connection: network_cli
@@ -8,5 +8,5 @@
   
   - name: Apply generated configs
     ios_config:
-      src=/var/ansible/configs/{{ hostname }}.cfg
+      src=/var/ansible/configs/{{ inventory_hostname }}.cfg
 ...

@@ -5,12 +5,6 @@
 
   tasks:
 
-  - name: Get hostname
-    ios_command:
-      commands:
-        - show run | i hostname
-    register: hostname
-
   - name: Show running-config
     ios_command:
       commands:
@@ -19,5 +13,5 @@
 
   - copy:
       content: "{{ config.stdout[0] }}"
-      dest: "/var/ansible/backups/{{ hostname.stdout[0] }}.txt"
+      dest: "/var/ansible/backups/{{ inventory_hostname }}.txt"
 ...
