@@ -1,5 +1,5 @@
 ---
-- name: Generate common config
+- name: Generate switch templates
   hosts: c9300_UP_lab
   gather_facts: no
   connection: network_cli
