@@ -1,5 +1,5 @@
 ---
-- name: Generate NTP config
+- name: Apply final config
   hosts: c9300_UP_lab
   gather_facts: no
   connection: network_cli
