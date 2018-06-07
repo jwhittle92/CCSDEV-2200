@@ -3,3 +3,6 @@
     tags: UP_lab
 
 
+ - name: Apply generated configs
+    ios_config:
+      src=/var/ansible/configs/{{ inventory_hostname }}.cfg
